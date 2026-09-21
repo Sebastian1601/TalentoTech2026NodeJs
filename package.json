@@ -1,0 +1,23 @@
+{
+  "name": "talentotech2026nodejs",
+  "version": "1.0.0",
+  "description": "Repositorio para guardar el trabajo entrega del curso de NodeJS Avanzado de TalentoTech 2026.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"node app.js --watch",
+    "start":"node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sebastian1601/TalentoTech2026NodeJs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Sebastian1601/TalentoTech2026NodeJs/issues"
+  },
+  "homepage": "https://github.com/Sebastian1601/TalentoTech2026NodeJs#readme"
+}
