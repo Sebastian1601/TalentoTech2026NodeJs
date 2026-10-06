@@ -1,4 +1,5 @@
 const URLAPI = "https://fakestoreapi.com/";
+const URLAPIalt = "https://dummyjson.com/"
 const regExpMetodo = /\b(GET|POST|PUT|PATCH|DELETE)\b/i;
 const regExpRecurso = /(products|cart|users)/i;
 const regExpIdentificador = /\/[0-9]{1,2}/;
@@ -28,7 +29,10 @@ if (!recurso) {
     process.exit();
 };
 
-let url = `${URLAPI}${recurso}`;
+let url = `${URLAPIalt}${recurso}`;
+if (metodo.toLowerCase() === "post") {
+    url = `${url}/add`;
+}
 if (idItem) {
     url += idItem;
     console.log(url);
@@ -74,7 +78,10 @@ switch (metodo.toUpperCase()) {
         console.log("La modificación de productos no está implementada.")
         break;
     case "DELETE":
-        console.log("La eliminación de productos no está implementada.")
+        fetch(url, { method: 'DELETE' })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(e => console.log(e.message))
         break;
     default:
         console.log("Petición inválida. Verifique los datos ingresados.");
